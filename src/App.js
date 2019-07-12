@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import GiphyList from './GiphyList'
 import SearchBar from './SearchBar'
-import _ from 'lodash'
+/*import _ from 'lodash'*/
 import Trending from './Trending'
 export const API_KEY = "GUTf8bfUqiw9qAOFftVEskEVydLsFKQ7"
 
