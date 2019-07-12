@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
     this.setState({ searchTerm })
     this.props.onChange(searchTerm)
   }
-
+  onChangetype = (ev) => this.handleSearchBarChange(ev.target.value)
   render() {
     return (
           <div className="input">
@@ -21,7 +21,8 @@ class SearchBar extends React.Component {
               type="text"
               placeholder="Search GIFs..."
               value={this.state.searchTerm}
-              onChange={(ev) => this.handleSearchBarChange(ev.target.value)}
+              /*onChange={(ev) => this.handleSearchBarChange(ev.target.value)}*/
+              onChange = {this.onChangetype}
             />
           </div>
     )
