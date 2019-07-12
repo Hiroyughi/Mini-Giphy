@@ -34,15 +34,14 @@ class App extends Component {
   }
 
   render() {
-    const fetchGifs = _.debounce((searchTerm) => {this.fetchGifs(searchTerm)}, 200)
+    /*const fetchGifs = _.debounce((searchTerm) => {this.fetchGifs(searchTerm)}, 200)*/
 
     if(!this.state.gifs.data) {
       return null
     } else {
       return (
         <div className="Check search text">
-          <SearchBar onChange={(searchTerm) => fetchGifs(searchTerm)} />
-
+          <SearchBar onChange={(searchTerm) => this.fetchGifs(searchTerm)} />
           <div className="Show images">
             <GiphyList gifs={this.state.gifs.data}/>
             <Trending/>
