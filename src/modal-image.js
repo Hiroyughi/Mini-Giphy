@@ -6,11 +6,6 @@ export default class ModalImage extends React.Component {
   constructor(props) {
     super(props);
     
-    /*
-    * Khi sử dụng, mình sẽ truyền thuộc tính ratio, giả sử là "3:2"
-    * Như vậy, tỉ lệ width/height là this.ratioWH = 3 / 2
-    * Mình sẽ điều chỉnh các ảnh sao cho về cùng 1 kích thước. 
-    */
     const ratioWHArray = this.props.ratio.split(":");
     this.ratioWH = ratioWHArray[0] / ratioWHArray[1];
 
