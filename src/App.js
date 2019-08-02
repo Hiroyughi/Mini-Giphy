@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import GiphyList from './GiphyList'
 import SearchBar from './SearchBar'
-/*import _ from 'lodash'*/
+import _ from 'lodash'
 import Trending from './Trending'
 export const API_KEY = "GUTf8bfUqiw9qAOFftVEskEVydLsFKQ7"
 
@@ -20,6 +20,7 @@ class App extends Component {
   }
 
   fetchGifs(searchTerm) {
+    _.debounce((searchTerm) => {this.fetchGifs(searchTerm)}, 200)
     return fetch(`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${API_KEY}&limit=20`)
     .then( res => res.json() )
     .then(json => {
