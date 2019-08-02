@@ -32,6 +32,9 @@ class App extends Component {
       }
     })
   }
+  onChangetest = (searchTerm) => {
+    this.fetchGifs(searchTerm)
+  }
 
   render() {
     /*const fetchGifs = _.debounce((searchTerm) => {this.fetchGifs(searchTerm)}, 200)*/
@@ -41,7 +44,8 @@ class App extends Component {
     } else {
       return (
         <div className="Check search text">
-          <SearchBar onChange={(searchTerm) => this.fetchGifs(searchTerm)} />
+        {/*<SearchBar onChange={(searchTerm) => this.fetchGifs(searchTerm)} />*/}
+          <SearchBar onChange={this.onChangetest}/>
           <div className="Show images">
             <GiphyList gifs={this.state.gifs.data}/>
             <Trending/>
